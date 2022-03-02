@@ -98,14 +98,14 @@ const displayPhoneDetail=phone2=>{
     //If release date doesn't exist 
     if(release.length == 0){
         div.innerHTML=`
-        <img src="${phone2.image}" class="card-img-top h-50 w-50 p-3" alt="...">     
-        <div class="card-body h-100 w-50 bg-light p-2 text-dark bg-opacity-50 text-center">
+        <img src="${phone2.image}" class="card-img-top h-50 w-50 p-5 mx-auto" alt="...">     
+        <div class="card-body h-100 w-100 bg-light p-2 text-dark bg-opacity-50 text-center">
           <h5 class="card-title">${phone2.name}</h5>
           <p class="card-text">Upcoming</p> 
           <h6 class="card-text bg-info">Main Features</h6>
-          <p class='card-text'>${phone2.mainFeatures.chipSet}</p>
-          <p class='card-text'>${phone2.mainFeatures.displaySize}</p>
-          <p class='card-text'>${phone2.mainFeatures.memory}</p>
+          <p class='card-text'>ChipSet: ${phone2.mainFeatures.chipSet}</p>
+          <p class='card-text'>Display Size: ${phone2.mainFeatures.displaySize}</p>
+          <p class='card-text'>Memory: ${phone2.mainFeatures.memory}</p>
           <h6 class='card-text bg-info'>Sensors</h6>
           <p class='card-text'>${phone2.mainFeatures.sensors[0]}</p>
           <p class='card-text'>${phone2.mainFeatures.sensors[1]}</p>
@@ -118,14 +118,14 @@ const displayPhoneDetail=phone2=>{
     //If release date exist
     else{
         div.innerHTML=`
-        <img src="${phone2.image}" class="card-img-top h-50 w-50 p=3" alt="...">
-        <div class="card-body h-100 w-50 bg-light p-2 text-dark bg-opacity-50 text-center">
+        <img src="${phone2.image}" class="card-img-top h-50 w-50 p=5 mx-auto" alt="...">
+        <div class="card-body h-100 w-100 bg-light p-2 text-dark bg-opacity-50 text-center">
           <h5 class="card-title">${phone2.name}</h5>         
           <p class="card-text">${phone2.releaseDate}</p>  
           <h6 class="card-text bg-info">Main Features</h6>
-          <p class='card-text'>${phone2.mainFeatures.chipSet}</p>
-          <p class='card-text'>${phone2.mainFeatures.displaySize}</p>
-          <p class='card-text'>${phone2.mainFeatures.memory}</p>
+          <p class='card-text'>ChipSet: ${phone2.mainFeatures.chipSet}</p>
+          <p class='card-text'>Display Size: ${phone2.mainFeatures.displaySize}</p>
+          <p class='card-text'>Memory: ${phone2.mainFeatures.memory}</p>
           <h6 class='card-text bg-info'>Sensors</h6>
           <p class='card-text'>${phone2.mainFeatures.sensors[0]}</p>
           <p class='card-text'>${phone2.mainFeatures.sensors[1]}</p>
