@@ -31,7 +31,7 @@ const searchPhone=async ()=>{
         const url=`https://openapi.programming-hero.com/api/phones?search=${searchText}`;
         fetch(url)
         .then(res=>res.json())
-        .then(data=>displaySearchResult(data.data))       
+        .then(data=>displaySearchResult(data.data.slice(0,20)))       
     }
 }
 
@@ -66,7 +66,7 @@ const displaySearchResult=phones=>{
                 <div class="card-body">
                     <h5 class="card-title">${phone.phone_name}</h5>
                     <p class="card-text">${phone.brand}</p>
-                    <button onclick="loadPhoneDetail('${phone.slug}')">Details</button>
+                    <button class="btn btn-info" onclick="loadPhoneDetail('${phone.slug}')">Details</button>
                 </div>
             </div>
             `;
@@ -98,13 +98,15 @@ const displayPhoneDetail=phone2=>{
     //If release date doesn't exist 
     if(release.length == 0){
         div.innerHTML=`
-        <img src="${phone2.image}" class="card-img-top p-5" alt="...">
-        <div class="card-body">
+        <img src="${phone2.image}" class="card-img-top h-50 w-50 p-3" alt="...">     
+        <div class="card-body h-100 w-50 bg-light p-2 text-dark bg-opacity-50 text-center">
           <h5 class="card-title">${phone2.name}</h5>
           <p class="card-text">Upcoming</p> 
+          <h6 class="card-text bg-info">Main Features</h6>
           <p class='card-text'>${phone2.mainFeatures.chipSet}</p>
           <p class='card-text'>${phone2.mainFeatures.displaySize}</p>
           <p class='card-text'>${phone2.mainFeatures.memory}</p>
+          <h6 class='card-text bg-info'>Sensors</h6>
           <p class='card-text'>${phone2.mainFeatures.sensors[0]}</p>
           <p class='card-text'>${phone2.mainFeatures.sensors[1]}</p>
           <p class='card-text'>${phone2.mainFeatures.sensors[2]}</p>
@@ -116,13 +118,15 @@ const displayPhoneDetail=phone2=>{
     //If release date exist
     else{
         div.innerHTML=`
-        <img src="${phone2.image}" class="card-img-top p-5" alt="...">
-        <div class="card-body">
+        <img src="${phone2.image}" class="card-img-top h-50 w-50 p=3" alt="...">
+        <div class="card-body h-100 w-50 bg-light p-2 text-dark bg-opacity-50 text-center">
           <h5 class="card-title">${phone2.name}</h5>         
           <p class="card-text">${phone2.releaseDate}</p>  
+          <h6 class="card-text bg-info">Main Features</h6>
           <p class='card-text'>${phone2.mainFeatures.chipSet}</p>
           <p class='card-text'>${phone2.mainFeatures.displaySize}</p>
           <p class='card-text'>${phone2.mainFeatures.memory}</p>
+          <h6 class='card-text bg-info'>Sensors</h6>
           <p class='card-text'>${phone2.mainFeatures.sensors[0]}</p>
           <p class='card-text'>${phone2.mainFeatures.sensors[1]}</p>
           <p class='card-text'>${phone2.mainFeatures.sensors[2]}</p>
